@@ -37,6 +37,13 @@
   </div>
   <script src="vanilla-tilt.min.js"></script>
   <script type="text/javascript">
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile == true) {
+      let destroyBox = document.querySelector(".calculator");
+      destroyBox.vanillaTilt.destroy();
+    }
+  </script>
+  <script type="text/javascript">
     VanillaTilt.init(document.querySelector(".calculator"), {
       max: 20,
       speed: 300,
@@ -46,8 +53,7 @@
       easing: "cubic-bezier(.03,.98,.52,.99)",
       transition: true,
       reset: true,
-	  glare: true,
+	    glare: true,
     });
-    VanillaTilt.init(document.querySelectorAll(".calculator"));
   </script>
 </body>      
